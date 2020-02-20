@@ -1,12 +1,16 @@
+<mat-toolbar>{{'app.title'|translate}}</mat-toolbar>
+
 <mat-accordion>
     <mat-expansion-panel *ngFor="let account of accounts;index as i" [expanded]="i===0">
         <mat-expansion-panel-header>
-            <h2>{{account.name}}</h2>
+            <h2>{{account.name}} | {{account.products.length}}</h2>
         </mat-expansion-panel-header>
-        <li *ngFor="let product of account.products">
-            <a [routerLink]="['/product-overview', product]">
-                <span class="badge">{{ product }}</span>
-            </a>
-        </li>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let product of account.products">
+                - &nbsp; <a [routerLink]="['/product-overview', product]">
+                    <span class="badge">{{ product }}</span>
+                </a>
+            </mat-list-item>
+        </mat-list>
     </mat-expansion-panel>
 </mat-accordion>

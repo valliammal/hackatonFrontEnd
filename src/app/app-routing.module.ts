@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
+import { MonitorComponent } from './monitor/monitor.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   // product overview route
   { path: 'product-overview/:id', component: ProductOverviewComponent },
+  // Internal customer (user) monitor route
+  { path: 'product-overview/:id', component: MonitorComponent },
+
   // otherwise redirect to public
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'dashboard' }
