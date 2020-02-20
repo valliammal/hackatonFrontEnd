@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
         this.authService.login(username, password).subscribe(success => {
           if (success.role === 'customer') {
             this.router.navigate(['/dashboard']);
+            localStorage.setItem('userID', success.userId);
+
           } else if (success.role === 'user') {
             this.router.navigate(['/monitor']);
           } else {

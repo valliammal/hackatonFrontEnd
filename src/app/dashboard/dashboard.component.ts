@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.accountService.getAccounts().subscribe(
+    this.accountService.getAccounts(localStorage.getItem('userID')).subscribe(
       success => {
         this.accounts = Object.keys(success.accounts).map(account => {
           return {
