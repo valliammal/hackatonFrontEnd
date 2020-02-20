@@ -13,17 +13,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
+import { MonitorComponent } from './monitor/monitor.component';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ProductOverviewComponent
+    ProductOverviewComponent,
+    MonitorComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,8 @@ import { ProductOverviewComponent } from './product-overview/product-overview.co
     MatInputModule,
     MatCardModule,
     MatTableModule,
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

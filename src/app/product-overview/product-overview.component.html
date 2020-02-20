@@ -1,13 +1,9 @@
-<!-- <div *ngFor="let detail of product" class="detail">
-    <div class="name">{{detail.name}}</div>
-    <div class="value">{{detail.value}}</div>
-</div> -->
-<h1>Product details</h1>
+<button mat-raised-button color="primary" routerLink="../">{{'app.product.details.back'|translate}}</button>
+
+<mat-toolbar>{{'app.product.details.title'|translate}}</mat-toolbar>
+
 <h2>Selected product: {{this.selectedProduct}}</h2>
 <table *ngIf="product" mat-table [dataSource]="product" class="mat-elevation-z8">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
