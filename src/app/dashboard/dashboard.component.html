@@ -1,4 +1,6 @@
-<mat-toolbar>{{'app.title'|translate}}</mat-toolbar>
+<mat-toolbar class="title-center">
+    <span class="title-center">{{'app.title'|translate}}</span>
+</mat-toolbar>
 
 <mat-accordion>
     <mat-expansion-panel *ngFor="let account of accounts;index as i" [expanded]="i===0">
