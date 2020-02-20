@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  public accounts = [];
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.accountService.getAccounts().subscribe(
+      success => {
+        this.accounts = Object.keys(success.accounts).map(account => {
+          return {
+            name: account,
+            products: success.accounts[account]
+          }
+        });
+      },
+      error => {
+        this.accounts = []
+        console.error('Error');
+      }
+    );
   }
 
 }

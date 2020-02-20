@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let account of accounts;index as i" [expanded]="i===0">
+        <mat-expansion-panel-header>
+            <h2>{{account.name}}</h2>
+        </mat-expansion-panel-header>
+        <li *ngFor="let product of account.products">
+            <a [routerLink]="['/product-overview', product]">
+                <span class="badge">{{ product }}</span>
+            </a>
+        </li>
+    </mat-expansion-panel>
+</mat-accordion>
