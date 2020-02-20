@@ -36,7 +36,13 @@ export class LoginComponent implements OnInit {
         const username = this.form.get('username').value;
         const password = this.form.get('password').value;
         this.authService.login(username, password).subscribe(success => {
-
+          if (success.role === 'customer') {
+            this.router.navigate(['/dashboard']);
+          } else if (success.role === 'user') {
+            this.router.navigate(['/monitor']);
+          } else {
+            console.log('Youre forbidden to proceed');
+          }
         }, error => {
           console.log(error);
         });
