@@ -10,16 +10,16 @@ export class TranslationSet {
 })
 export class TranslationService {
 
-  public languages = ['nl', 'en']
+  public languages = ['nl', 'en'];
 
-  public language = 'en'
+  public language = 'nl'
 
   private dictionary: { [key: string]: TranslationSet } = {
     nl: {
       languange: 'nl',
       values: {
         'app.title': 'Produkten ING',
-        'app.product.details.title': 'product details',
+        'app.product.details.title': 'productdetails',
         'app.product.details.back': 'terug naar accounts'
       },
     },
@@ -27,7 +27,7 @@ export class TranslationService {
       languange: 'en',
       values: {
         'app.title': 'Products ING',
-        'app.product.details.title': 'productdetails',
+        'app.product.details.title': 'product details',
         'app.product.details.back': 'back to accounts'
       },
     },
