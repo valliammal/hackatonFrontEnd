@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<button ng-click="myFunc()">Acct Details!</button>
+<div ng-show="showMe">
+    <h1>Menu:</h1>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li role="menuitem"><a href="" ng-click="savings()" >SavingsAcct</a></li>
+        <li role="menuitem"><a href="" ng-click="payments()">PaymentsAcct</a></li>
+        <li role="menuitem"><a href="" ng-click="mortgages()">MortgageAcct</a></li>
+       </ul>
+</div>
+  <div ng-show="savingsme">
+  <h2 >Different Savings Acct</h2>
+  <ul>
+	<a href="salarySaving"><li> Salary Savings Acct </li></a>
+    <a href="depositSaving"><li> Savings Deposit Acct </li></a>
+    <a href="jointSalarySaving"><li> Joint Savings Acct </li></a>
+   </ul>
+  </div>
+  <div ng-show="paymentsme">
+  <h2>Different Payments Acct</h2>
+  <ul>
+    <a href="paymentMortgage"><li> Payment Acct for Mortgage </li></a>
+    <a href="paymentTelephone"><li> Payment Acct for TelephoneBill </li></a>
+    <a href="paymentElectricity"><li> Payment Acct for ElectricityBill </i></a>
+  </ul>
+  </div>
+  <div ng-show="mortgageme">
+  <h2>Different Mortgage Acct</h2>
+  <ul>
+    <a href="weekly"><li> Weekly  </li>
+    <a href="monthly"><li> Monthly </li>
+    <a href="yearly"><li> Yearly </li>
+  </ul>
+  </div>
+</div>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($scope) {
+    $scope.showMe = false;
+	$scope.savingsme = false;
+	$scope.paymentsme = false;
+	$scope.mortgageme = false;
+	
+    $scope.myFunc = function() {
+        $scope.showMe = !$scope.showMe;
+    }
+	$scope.savings = function() {
+	    $scope.savingsme = !$scope.savingsme;
+    }
+	$scope.payments = function() {
+	    $scope.paymentsme = !$scope.paymentsme;
+    }
+	$scope.mortgages = function() {
+	    $scope.mortgageme = !$scope.mortgageme;
+    }
+
+});
+</script>
+
+</body>
+</html>
